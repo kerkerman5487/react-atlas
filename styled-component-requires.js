@@ -1,1 +1,0 @@
-module.exports = [require('C:/dev/react-atlas/drStyle/createComponent.js'),require('C:/dev/react-atlas/drStyle/hint/Hint.js'),require('C:/dev/react-atlas/drStyle/hint/index.js'),require('C:/dev/react-atlas/drStyle/index.js')]
