@@ -5,13 +5,13 @@ import style from './card.css';
 /**
  * Simple Card component that wraps a div around content with card styling.
  */
-const Card = ({children}) => {
+const Card = ({children, className,...props}) => {
   const cx = classNames.bind(style);
-  const className = cx({
+  const classes = cx( className, {
     "card": true
   });
 
-  return <div className={className}>{children}</div>;
+  return <div {...props} className={classes}>{children}</div>;
 };
 
 Card.propTypes = {
