@@ -37,10 +37,6 @@ class SnackbarExample extends React.Component {
     this.setState({active: false, overlayActive: false});
   };
 
-  handleSnackbarTimeout = () =&gt; {
-    this.setState({active: false, overlayActive: false});
-  };
-
   handleRegularClick = () =&gt; {
     this.setState({active: true});
   };
@@ -60,7 +56,6 @@ class SnackbarExample extends React.Component {
           action=&quot;Hide&quot;
           active={this.state.active}
           timeout={20000}
-          onTimeout={this.handleSnackbarTimeout}
           type=&quot;cancel&quot;
         &gt;
           Snackbar Content
@@ -78,7 +73,6 @@ class SnackbarExample extends React.Component {
             action=&quot;Hide&quot;
             active={this.state.overlayActive}
             timeout={20000}
-            onTimeout={this.handleSnackbarTimeout}
             type=&quot;cancel&quot;
           &gt;
             Snackbar Content
@@ -96,7 +90,9 @@ ReactDOM.render(&lt;SnackbarExample/&gt;, mountNode);
 // }
 </code></pre>
 <h3 id="properties">Properties</h3>
-</div></div></div><div class="Documentation"><table class="Props"><thead><tr><th>Property</th><th>Type</th><th>Description</th><th>Default Value</th><th>Example</th></tr></thead><tbody><tr class="Prop"><td><span class="Prop-name">active</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">className</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">timeout</span></td><td><span class="Prop-type">number</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">onTimeout</span></td><td><span class="Prop-type">func</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">children</span></td><td><span class="Prop-type">node</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr></tbody></table></div></div></section></div></main></div></div>
+</div></div></div><div class="Documentation"><table class="Props"><thead><tr><th>Property</th><th>Type</th><th>Description</th><th>Default Value</th><th>Example</th></tr></thead><tbody><tr class="Prop"><td><span class="Prop-name">active</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">className</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">timeout</span></td><td><span class="Prop-type">number</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">children</span></td><td><span class="Prop-type">node</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">theme</span></td><td><span class="Prop-type"></span></td><td></td><td><span class="Prop-default"><span class="Prop-default-value">{
+  root: true
+}</span></span></td><td></td></tr></tbody></table></div></div></section></div></main></div></div>
 
     <script src="bundle.js"></script>
     <!--[if IE]>

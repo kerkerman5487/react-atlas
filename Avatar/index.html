@@ -28,42 +28,52 @@
 <p>Avatar component creates a circular area where an image, letter or icon/glyphicon can be presented. Great for user profiles and lists.</p>
 <p><strong>NOTE</strong>: children will always take precedence over props passed into component.</p>
 <pre><code class="lang-playground">
-  &lt;section&gt;
-    &lt;h5&gt;Avatars&lt;/h5&gt;
-    {/* background color change */}
-    &lt;Avatar style={{backgroundColor: &#39;deepskyblue&#39;}} &gt;
-      &lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;
-    &lt;/Avatar&gt;
-    {/* title prop gets truncated to 1st letter */}
-    &lt;Avatar title=&quot;Nathan&quot; /&gt;
-    {/* icon beats title */}
-    &lt;Avatar title=&quot;Nathan&quot; icon={&lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;} /&gt;
-    {/* image beats icon */}
-    &lt;Avatar 
-      icon={&lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;}
-      image=&quot;cat.jpg&quot;
-    /&gt;
-    {/* image beats title */}
-    &lt;Avatar title=&quot;Javier&quot; image=&quot;cat.jpg&quot; /&gt;
-    {/* child beats parameters */}
-    &lt;Avatar title=&quot;Nathan&quot; image=&quot;cat.jpg&quot;&gt;
-      &lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;
-    &lt;/Avatar&gt;
-    &lt;Avatar title=&quot;Nathan&quot; icon={&lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;}&gt;
-      &lt;img src=&quot;cat.jpg&quot;/&gt;
-    &lt;/Avatar&gt;
-    {/* child string gets truncated to 1st letter */}
-    &lt;Avatar&gt;Nathan&lt;/Avatar&gt;
-    {/* child should be &lt;i&gt;, &lt;svg&gt;, &lt;img&gt;, or string */}
-    &lt;Avatar&gt;&lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;&lt;/Avatar&gt;
-  &lt;/section&gt;
+   &lt;section&gt;
+     &lt;h5&gt;Avatars&lt;/h5&gt;
+     {/* background color change */}
+     &lt;Avatar style={{backgroundColor: &#39;deepskyblue&#39;}} &gt;
+       &lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;
+     &lt;/Avatar&gt;
+     {/* title prop gets truncated to 1st letter */}
+     &lt;Avatar title=&quot;Nathan&quot; /&gt;
+     {/* icon beats title */}
+     &lt;Avatar title=&quot;Nathan&quot; icon={&lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;} /&gt;
+     {/* image beats icon */}
+     &lt;Avatar
+       icon={&lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;}
+       image=&quot;cat.jpg&quot;
+     /&gt;
+     {/* image beats title */}
+     &lt;Avatar title=&quot;Javier&quot; image=&quot;cat.jpg&quot; /&gt;
+     {/* child beats parameters */}
+     &lt;Avatar title=&quot;Nathan&quot; image=&quot;cat.jpg&quot;&gt;
+       &lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;
+     &lt;/Avatar&gt;
+     &lt;Avatar title=&quot;Nathan&quot; icon={&lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;}&gt;
+       &lt;img src=&quot;cat.jpg&quot;/&gt;
+     &lt;/Avatar&gt;
+     {/* image beats defaultImage */}
+     &lt;Avatar image=&quot;nature.jpg&quot; defaultImage=&quot;cat.jpg&quot; /&gt;
+     {/* defaultImage beats title */}
+     &lt;Avatar title=&quot;Javier&quot; defaultImage=&quot;nature.jpg&quot; /&gt;
+     {/* defaultImage will replace a image that fails to load */}
+     &lt;Avatar image=&quot;badImage.jpg&quot; defaultImage=&quot;chillgirl.jpeg&quot; /&gt;
+     {/* child string gets truncated to 1st letter */}
+     &lt;Avatar&gt;Nathan&lt;/Avatar&gt;
+     {/* child should be &lt;i&gt;, &lt;svg&gt;, &lt;img&gt;, or string */}
+     &lt;Avatar&gt;&lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;&lt;/Avatar&gt;
+   &lt;/section&gt;
 </code></pre>
 <h3 id="properties">Properties</h3>
 </div></div></div><div class="Documentation"><table class="Props"><thead><tr><th>Property</th><th>Type</th><th>Description</th><th>Default Value</th><th>Example</th></tr></thead><tbody><tr class="Prop"><td><span class="Prop-name">children</span></td><td><span class="Prop-type">node</span></td><td><span class="Prop-description">Children should be either a string, an icon/glyphicon, or an image tag.
 </span></td><td></td><td><span class="Prop-examples"><span class="Prop-examples-value"> &quot;SomeName&quot;, &lt;SomeIcon /&gt;, &lt;img src=&quot;/path/to/image.jpg&quot;/&gt;</span></span></td></tr><tr class="Prop"><td><span class="Prop-name">className</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description">A css class name that will be appended to the wrapping div around the avatar.</span></td><td><span class="Prop-default"><span class="Prop-default-value">&#x27;&#x27;</span></span></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">icon</span></td><td><span class="Prop-type">string, element</span></td><td><span class="Prop-description">For displaying an icon/glphyicon. Normally these will be another component or an element with a class on it.
 </span></td><td><span class="Prop-default"><span class="Prop-default-value">&#x27;&#x27;</span></span></td><td><span class="Prop-examples"><span class="Prop-examples-value"> &lt;GithubIcon /&gt;, &lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt;</span></span></td></tr><tr class="Prop"><td><span class="Prop-name">image</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description">Path to an image
 </span></td><td></td><td><span class="Prop-examples"><span class="Prop-examples-value"> &quot;http://path.to/an/image.jpg&quot;</span></span></td></tr><tr class="Prop"><td><span class="Prop-name">title</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description">A string. Avatar will use First letter of the string.
-</span></td><td></td><td><span class="Prop-examples"><span class="Prop-examples-value"> &quot;Nathan&quot; will output &quot;N&quot;</span></span></td></tr></tbody></table></div></div></section></div></main></div></div>
+</span></td><td></td><td><span class="Prop-examples"><span class="Prop-examples-value"> &quot;Nathan&quot; will output &quot;N&quot;</span></span></td></tr><tr class="Prop"><td><span class="Prop-name">defaultImage</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description">A URL to a image that is displayed when the main image fails to load.</span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">theme</span></td><td><span class="Prop-type">{letter: string, image: string, avatar: string}</span></td><td><span class="Prop-description"></span></td><td><span class="Prop-default"><span class="Prop-default-value">{
+  letter: &quot;ra_avatar__letter&quot;,
+  image: &quot;ra_avatar__image&quot;,
+  avatar: &quot;ra_avatar__avatar&quot;
+}</span></span></td><td></td></tr></tbody></table></div></div></section></div></main></div></div>
 
     <script src="bundle.js"></script>
     <!--[if IE]>

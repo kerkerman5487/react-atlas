@@ -109,42 +109,52 @@
 <p>Avatar component creates a circular area where an image, letter or icon/glyphicon can be presented. Great for user profiles and lists.</p>
 <p><strong>NOTE</strong>: children will always take precedence over props passed into component.</p>
 <pre><code class="lang-playground">
-  &lt;section&gt;
-    &lt;h5&gt;Avatars&lt;/h5&gt;
-    {/* background color change */}
-    &lt;Avatar style={{backgroundColor: &#39;deepskyblue&#39;}} &gt;
-      &lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;
-    &lt;/Avatar&gt;
-    {/* title prop gets truncated to 1st letter */}
-    &lt;Avatar title=&quot;Nathan&quot; /&gt;
-    {/* icon beats title */}
-    &lt;Avatar title=&quot;Nathan&quot; icon={&lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;} /&gt;
-    {/* image beats icon */}
-    &lt;Avatar 
-      icon={&lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;}
-      image=&quot;cat.jpg&quot;
-    /&gt;
-    {/* image beats title */}
-    &lt;Avatar title=&quot;Javier&quot; image=&quot;cat.jpg&quot; /&gt;
-    {/* child beats parameters */}
-    &lt;Avatar title=&quot;Nathan&quot; image=&quot;cat.jpg&quot;&gt;
-      &lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;
-    &lt;/Avatar&gt;
-    &lt;Avatar title=&quot;Nathan&quot; icon={&lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;}&gt;
-      &lt;img src=&quot;cat.jpg&quot;/&gt;
-    &lt;/Avatar&gt;
-    {/* child string gets truncated to 1st letter */}
-    &lt;Avatar&gt;Nathan&lt;/Avatar&gt;
-    {/* child should be &lt;i&gt;, &lt;svg&gt;, &lt;img&gt;, or string */}
-    &lt;Avatar&gt;&lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;&lt;/Avatar&gt;
-  &lt;/section&gt;
+   &lt;section&gt;
+     &lt;h5&gt;Avatars&lt;/h5&gt;
+     {/* background color change */}
+     &lt;Avatar style={{backgroundColor: &#39;deepskyblue&#39;}} &gt;
+       &lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;
+     &lt;/Avatar&gt;
+     {/* title prop gets truncated to 1st letter */}
+     &lt;Avatar title=&quot;Nathan&quot; /&gt;
+     {/* icon beats title */}
+     &lt;Avatar title=&quot;Nathan&quot; icon={&lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;} /&gt;
+     {/* image beats icon */}
+     &lt;Avatar
+       icon={&lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;}
+       image=&quot;cat.jpg&quot;
+     /&gt;
+     {/* image beats title */}
+     &lt;Avatar title=&quot;Javier&quot; image=&quot;cat.jpg&quot; /&gt;
+     {/* child beats parameters */}
+     &lt;Avatar title=&quot;Nathan&quot; image=&quot;cat.jpg&quot;&gt;
+       &lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;
+     &lt;/Avatar&gt;
+     &lt;Avatar title=&quot;Nathan&quot; icon={&lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;}&gt;
+       &lt;img src=&quot;cat.jpg&quot;/&gt;
+     &lt;/Avatar&gt;
+     {/* image beats defaultImage */}
+     &lt;Avatar image=&quot;nature.jpg&quot; defaultImage=&quot;cat.jpg&quot; /&gt;
+     {/* defaultImage beats title */}
+     &lt;Avatar title=&quot;Javier&quot; defaultImage=&quot;nature.jpg&quot; /&gt;
+     {/* defaultImage will replace a image that fails to load */}
+     &lt;Avatar image=&quot;badImage.jpg&quot; defaultImage=&quot;chillgirl.jpeg&quot; /&gt;
+     {/* child string gets truncated to 1st letter */}
+     &lt;Avatar&gt;Nathan&lt;/Avatar&gt;
+     {/* child should be &lt;i&gt;, &lt;svg&gt;, &lt;img&gt;, or string */}
+     &lt;Avatar&gt;&lt;i className=&quot;fa fa-github&quot;&gt;&lt;/i&gt;&lt;/Avatar&gt;
+   &lt;/section&gt;
 </code></pre>
 <h3 id="properties">Properties</h3>
 </div></div></div><div class="Documentation"><table class="Props"><thead><tr><th>Property</th><th>Type</th><th>Description</th><th>Default Value</th><th>Example</th></tr></thead><tbody><tr class="Prop"><td><span class="Prop-name">children</span></td><td><span class="Prop-type">node</span></td><td><span class="Prop-description">Children should be either a string, an icon/glyphicon, or an image tag.
 </span></td><td></td><td><span class="Prop-examples"><span class="Prop-examples-value"> &quot;SomeName&quot;, &lt;SomeIcon /&gt;, &lt;img src=&quot;/path/to/image.jpg&quot;/&gt;</span></span></td></tr><tr class="Prop"><td><span class="Prop-name">className</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description">A css class name that will be appended to the wrapping div around the avatar.</span></td><td><span class="Prop-default"><span class="Prop-default-value">&#x27;&#x27;</span></span></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">icon</span></td><td><span class="Prop-type">string, element</span></td><td><span class="Prop-description">For displaying an icon/glphyicon. Normally these will be another component or an element with a class on it.
 </span></td><td><span class="Prop-default"><span class="Prop-default-value">&#x27;&#x27;</span></span></td><td><span class="Prop-examples"><span class="Prop-examples-value"> &lt;GithubIcon /&gt;, &lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt;</span></span></td></tr><tr class="Prop"><td><span class="Prop-name">image</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description">Path to an image
 </span></td><td></td><td><span class="Prop-examples"><span class="Prop-examples-value"> &quot;http://path.to/an/image.jpg&quot;</span></span></td></tr><tr class="Prop"><td><span class="Prop-name">title</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description">A string. Avatar will use First letter of the string.
-</span></td><td></td><td><span class="Prop-examples"><span class="Prop-examples-value"> &quot;Nathan&quot; will output &quot;N&quot;</span></span></td></tr></tbody></table></div></div></section><section class="sg sg-section"><div class="Ecology"><div class="Overview"><div><div class="sg-spinner" style="display:block;"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div><div style="display:none;"><h1 id="autocomplete">Autocomplete</h1>
+</span></td><td></td><td><span class="Prop-examples"><span class="Prop-examples-value"> &quot;Nathan&quot; will output &quot;N&quot;</span></span></td></tr><tr class="Prop"><td><span class="Prop-name">defaultImage</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description">A URL to a image that is displayed when the main image fails to load.</span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">theme</span></td><td><span class="Prop-type">{letter: string, image: string, avatar: string}</span></td><td><span class="Prop-description"></span></td><td><span class="Prop-default"><span class="Prop-default-value">{
+  letter: &quot;ra_avatar__letter&quot;,
+  image: &quot;ra_avatar__image&quot;,
+  avatar: &quot;ra_avatar__avatar&quot;
+}</span></span></td><td></td></tr></tbody></table></div></div></section><section class="sg sg-section"><div class="Ecology"><div class="Overview"><div><div class="sg-spinner" style="display:block;"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div><div style="display:none;"><h1 id="autocomplete">Autocomplete</h1>
 <p>Auto Complete component is a very simple wrapper around the <a href="https://github.com/moroshko/react-autosuggest">React-Autosuggest</a> component.
 Read there for more comprehensive documentation.</p>
 <pre><code class="lang-playground_norender">
@@ -165,7 +175,7 @@ var languages = [
 ];
 // }
 // internal component methods {
-var App = React.createClass({
+var AutoCompleteExample = React.createClass({
 
   getInitialState: function() {
     return ({ 
@@ -235,7 +245,7 @@ var App = React.createClass({
 // Mount component {
 })
 
-ReactDOM.render(&lt;App/&gt;, mountNode);
+ReactDOM.render(&lt;AutoCompleteExample /&gt;, mountNode);
 // }
 </code></pre>
 <h3 id="properties">Properties</h3>
@@ -475,7 +485,9 @@ ReactDOM.render(&lt;App/&gt;, mountNode);
 // }
 </code></pre>
 <h3 id="properties">Properties</h3>
-</div></div></div><div class="Documentation"><table class="Props"><thead><tr><th>Property</th><th>Type</th><th>Description</th><th>Default Value</th><th>Example</th></tr></thead><tbody><tr class="Prop"><td><span class="Prop-name">active</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">children</span></td><td><span class="Prop-type">node</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">className</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">invisible</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td><span class="Prop-default"><span class="Prop-default-value">false</span></span></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">onClick</span></td><td><span class="Prop-type">func</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr></tbody></table></div></div></section><section class="sg sg-section"><div class="Ecology"><div class="Overview"><div><div class="sg-spinner" style="display:block;"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div><div style="display:none;"><h1 id="input">Input</h1>
+</div></div></div><div class="Documentation"><table class="Props"><thead><tr><th>Property</th><th>Type</th><th>Description</th><th>Default Value</th><th>Example</th></tr></thead><tbody><tr class="Prop"><td><span class="Prop-name">active</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">children</span></td><td><span class="Prop-type">node</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">className</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">invisible</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td><span class="Prop-default"><span class="Prop-default-value">false</span></span></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">onClick</span></td><td><span class="Prop-type">func</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">theme</span></td><td><span class="Prop-type"></span></td><td></td><td><span class="Prop-default"><span class="Prop-default-value">{
+  &#x27;active&#x27;: true
+}</span></span></td><td></td></tr></tbody></table></div></div></section><section class="sg sg-section"><div class="Ecology"><div class="Overview"><div><div class="sg-spinner" style="display:block;"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div><div style="display:none;"><h1 id="input">Input</h1>
 <p>Input component. Takes a label prop and wraps label and input in a div. Takes regular input attributes as props as well</p>
 <pre><code class="lang-playground">
 &lt;section&gt;
@@ -498,7 +510,9 @@ ReactDOM.render(&lt;App/&gt;, mountNode);
 &lt;/section&gt;
 </code></pre>
 <h3 id="properties">Properties</h3>
-</div></div></div><div class="Documentation"><table class="Props"><thead><tr><th>Property</th><th>Type</th><th>Description</th><th>Default Value</th><th>Example</th></tr></thead><tbody><tr class="Prop"><td><span class="Prop-name">disabled</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td><span class="Prop-default"><span class="Prop-default-value">false</span></span></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">className</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">htmlFor</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">maxLength</span></td><td><span class="Prop-type">number</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">inputText</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">focus</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td><span class="Prop-default"><span class="Prop-default-value">false</span></span></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">label</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">multiline</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">type</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td><span class="Prop-default"><span class="Prop-default-value">&#x27;text&#x27;</span></span></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">value</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">onChange</span></td><td><span class="Prop-type">func</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">inputLength</span></td><td><span class="Prop-type"></span></td><td></td><td><span class="Prop-default"><span class="Prop-default-value">0</span></span></td><td></td></tr></tbody></table></div></div></section><section class="sg sg-section"><div class="Ecology"><div class="Overview"><div><div class="sg-spinner" style="display:block;"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div><div style="display:none;"><h1 id="progressbar">ProgressBar</h1>
+</div></div></div><div class="Documentation"><table class="Props"><thead><tr><th>Property</th><th>Type</th><th>Description</th><th>Default Value</th><th>Example</th></tr></thead><tbody><tr class="Prop"><td><span class="Prop-name">disabled</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td><span class="Prop-default"><span class="Prop-default-value">false</span></span></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">className</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">htmlFor</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">maxLength</span></td><td><span class="Prop-type">number</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">inputText</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">focus</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td><span class="Prop-default"><span class="Prop-default-value">false</span></span></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">label</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">multiline</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">type</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td><span class="Prop-default"><span class="Prop-default-value">&#x27;text&#x27;</span></span></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">value</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">onChange</span></td><td><span class="Prop-type">func</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">inputLength</span></td><td><span class="Prop-type"></span></td><td></td><td><span class="Prop-default"><span class="Prop-default-value">0</span></span></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">theme</span></td><td><span class="Prop-type"></span></td><td></td><td><span class="Prop-default"><span class="Prop-default-value">{
+  &#x27;container&#x27;: true
+}</span></span></td><td></td></tr></tbody></table></div></div></section><section class="sg sg-section"><div class="Ecology"><div class="Overview"><div><div class="sg-spinner" style="display:block;"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div><div style="display:none;"><h1 id="progressbar">ProgressBar</h1>
 <pre><code class="lang-playground_norender">
 // Internal Methods {
 class ProgressBarExample extends React.Component {
@@ -662,7 +676,9 @@ ReactDOM.render(&lt;TabsExample /&gt;, mountNode);
 &lt;/section&gt;
 </code></pre>
 <h3 id="properties">Properties</h3>
-</div></div></div><div class="Documentation"><table class="Props"><thead><tr><th>Property</th><th>Type</th><th>Description</th><th>Default Value</th><th>Example</th></tr></thead><tbody><tr class="Prop"><td><span class="Prop-name">inline</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">children</span></td><td><span class="Prop-type">any</span></td><td><span class="Prop-description"></span></td><td><span class="Prop-default"><span class="Prop-default-value">&lt;p&gt;This is some text with tooltip&lt;/p&gt;</span></span></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">className</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td><span class="Prop-default"><span class="Prop-default-value">&#x27;&#x27;</span></span></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">tooltip</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td><span class="Prop-default"><span class="Prop-default-value">&#x27;Sample Tooltip Text&#x27;</span></span></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">tooltipDelay</span></td><td><span class="Prop-type">number</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">tooltipHideOnClick</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">position</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr></tbody></table></div></div></section><section class="sg sg-section"><div class="Ecology"><div class="Overview"><div><div class="sg-spinner" style="display:block;"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div><div style="display:none;"><h1 id="dialog">Dialog</h1>
+</div></div></div><div class="Documentation"><table class="Props"><thead><tr><th>Property</th><th>Type</th><th>Description</th><th>Default Value</th><th>Example</th></tr></thead><tbody><tr class="Prop"><td><span class="Prop-name">inline</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">children</span></td><td><span class="Prop-type">any</span></td><td><span class="Prop-description"></span></td><td><span class="Prop-default"><span class="Prop-default-value">&lt;p&gt;This is some text with tooltip&lt;/p&gt;</span></span></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">className</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td><span class="Prop-default"><span class="Prop-default-value">&#x27;&#x27;</span></span></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">tooltip</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td><span class="Prop-default"><span class="Prop-default-value">&#x27;Sample Tooltip Text&#x27;</span></span></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">tooltipDelay</span></td><td><span class="Prop-type">number</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">tooltipHideOnClick</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">position</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">theme</span></td><td><span class="Prop-type"></span></td><td></td><td><span class="Prop-default"><span class="Prop-default-value">{
+  &#x27;block&#x27;: true
+}</span></span></td><td></td></tr></tbody></table></div></div></section><section class="sg sg-section"><div class="Ecology"><div class="Overview"><div><div class="sg-spinner" style="display:block;"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div><div style="display:none;"><h1 id="dialog">Dialog</h1>
 <pre><code class="lang-playground_norender">
 // Internal Methods {
 class App extends React.Component {
@@ -806,10 +822,6 @@ class SnackbarExample extends React.Component {
     this.setState({active: false, overlayActive: false});
   };
 
-  handleSnackbarTimeout = () =&gt; {
-    this.setState({active: false, overlayActive: false});
-  };
-
   handleRegularClick = () =&gt; {
     this.setState({active: true});
   };
@@ -829,7 +841,6 @@ class SnackbarExample extends React.Component {
           action=&quot;Hide&quot;
           active={this.state.active}
           timeout={20000}
-          onTimeout={this.handleSnackbarTimeout}
           type=&quot;cancel&quot;
         &gt;
           Snackbar Content
@@ -847,7 +858,6 @@ class SnackbarExample extends React.Component {
             action=&quot;Hide&quot;
             active={this.state.overlayActive}
             timeout={20000}
-            onTimeout={this.handleSnackbarTimeout}
             type=&quot;cancel&quot;
           &gt;
             Snackbar Content
@@ -865,7 +875,9 @@ ReactDOM.render(&lt;SnackbarExample/&gt;, mountNode);
 // }
 </code></pre>
 <h3 id="properties">Properties</h3>
-</div></div></div><div class="Documentation"><table class="Props"><thead><tr><th>Property</th><th>Type</th><th>Description</th><th>Default Value</th><th>Example</th></tr></thead><tbody><tr class="Prop"><td><span class="Prop-name">active</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">className</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">timeout</span></td><td><span class="Prop-type">number</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">onTimeout</span></td><td><span class="Prop-type">func</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">children</span></td><td><span class="Prop-type">node</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr></tbody></table></div></div></section><section class="sg sg-section"><div class="Ecology"><div class="Overview"><div><div class="sg-spinner" style="display:block;"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div><div style="display:none;"><h1 id="tabs">Tabs</h1>
+</div></div></div><div class="Documentation"><table class="Props"><thead><tr><th>Property</th><th>Type</th><th>Description</th><th>Default Value</th><th>Example</th></tr></thead><tbody><tr class="Prop"><td><span class="Prop-name">active</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">className</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">timeout</span></td><td><span class="Prop-type">number</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">children</span></td><td><span class="Prop-type">node</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">theme</span></td><td><span class="Prop-type"></span></td><td></td><td><span class="Prop-default"><span class="Prop-default-value">{
+  root: true
+}</span></span></td><td></td></tr></tbody></table></div></div></section><section class="sg sg-section"><div class="Ecology"><div class="Overview"><div><div class="sg-spinner" style="display:block;"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div><div style="display:none;"><h1 id="tabs">Tabs</h1>
 <p>Wrapper component to organize and produce tabs using multiple <code>&lt;Tab&gt;</code> components as children.</p>
 <pre><code class="lang-playground_norender">
 // Internal Methods {
@@ -1361,7 +1373,7 @@ ReactDOM.render(&lt;DropdownListItemExample/&gt;, mountNode);
 &lt;/section&gt;
 </code></pre>
 <h3 id="properties">Properties</h3>
-</div></div></div><div class="Documentation"><em>This component has no PropTypes defined.</em></div></div></section><section class="sg sg-section"><div class="Ecology"><div class="Overview"><div><div class="sg-spinner" style="display:block;"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div><div style="display:none;"><h1 id="thead">Thead</h1>
+</div></div></div><div class="Documentation"><table class="Props"><thead><tr><th>Property</th><th>Type</th><th>Description</th><th>Default Value</th><th>Example</th></tr></thead><tbody><tr class="Prop"><td><span class="Prop-name">className</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td><span class="Prop-default"><span class="Prop-default-value">&#x27;&#x27;</span></span></td><td></td></tr></tbody></table></div></div></section><section class="sg sg-section"><div class="Ecology"><div class="Overview"><div><div class="sg-spinner" style="display:block;"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div><div style="display:none;"><h1 id="thead">Thead</h1>
 <pre><code class="lang-playground">
 &lt;section&gt;
   &lt;h5&gt;Thead Example&lt;/h5&gt;
@@ -1555,7 +1567,9 @@ ReactDOM.render(&lt;DropdownListItemExample/&gt;, mountNode);
 &lt;/section&gt;
 </code></pre>
 <h3 id="properties">Properties</h3>
-</div></div></div><div class="Documentation"><table class="Props"><thead><tr><th>Property</th><th>Type</th><th>Description</th><th>Default Value</th><th>Example</th></tr></thead><tbody><tr class="Prop"><td><span class="Prop-name">aspectRatio</span></td><td><span class="Prop-type">&#x27;wide&#x27;, &#x27;square&#x27;</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">children</span></td><td><span class="Prop-type">any</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">className</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">color</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">contentOverlay</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">image</span></td><td><span class="Prop-type">string, element</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr></tbody></table></div></div></section></div></main></div></div>
+</div></div></div><div class="Documentation"><table class="Props"><thead><tr><th>Property</th><th>Type</th><th>Description</th><th>Default Value</th><th>Example</th></tr></thead><tbody><tr class="Prop"><td><span class="Prop-name">aspectRatio</span></td><td><span class="Prop-type">&#x27;wide&#x27;, &#x27;square&#x27;</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">children</span></td><td><span class="Prop-type">any</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">className</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">color</span></td><td><span class="Prop-type">string</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">contentOverlay</span></td><td><span class="Prop-type">bool</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">image</span></td><td><span class="Prop-type">string, element</span></td><td><span class="Prop-description"></span></td><td></td><td></td></tr><tr class="Prop"><td><span class="Prop-name">theme</span></td><td><span class="Prop-type"></span></td><td></td><td><span class="Prop-default"><span class="Prop-default-value">{
+  &#x27;content&#x27;: true
+}</span></span></td><td></td></tr></tbody></table></div></div></section></div></main></div></div>
 
     <script src="bundle.js"></script>
     <!--[if IE]>
